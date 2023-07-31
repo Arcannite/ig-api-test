@@ -1,0 +1,14 @@
+
+
+curl -X POST \
+  https://api.instagram.com/oauth/access_token \
+  -F client_id=1276731266302451 \
+  -F client_secret={app_secret} \
+  -F grant_type=authorization_code \
+  -F redirect_uri=https://ig-api-test-deploy.vercel.app/ \
+  -F code={code}
+
+curl -i -X GET 'https://graph.instagram.com/24291891907076892?fields=id,username&client_id=1276731266302451&client_secret={app_secret}'
+
+
+curl -i -X GET "https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=691495b3b678fad88ebb5ef73c88dd8b&access_token={access_token}"
